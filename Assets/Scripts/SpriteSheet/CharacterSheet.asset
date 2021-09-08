@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446669cf4803f4a48934d747245fdbae, type: 3}
+  m_Name: CharacterSheet
+  m_EditorClassIdentifier: 
+  basePalette: {fileID: 11400000, guid: c9d329c8f54c4ef42bfcd2577a248719, type: 2}
+  texture: {fileID: 2800000, guid: c59edcc6b4f5c7542916daf93a671169, type: 3}

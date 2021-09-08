@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PaletteData", menuName = "ScriptableObjects/SpriteInfo/PaletteData", order = 1)]
 public class PaletteData : ScriptableObject
 {
     public Color primaryColor;
