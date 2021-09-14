@@ -149,24 +149,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522002691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79262bb2e9fcf324d9778e815ef498ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseDown:
+  m_Actions: {fileID: -944628639613478452, guid: 582106e290de5ae44a94aad3e8c0f4e8, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
-  mouseUp:
+  m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls: []
-  keyDown:
+  m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  keyPressed:
-    m_PersistentCalls:
+  m_ActionEvents:
+  - m_PersistentCalls:
       m_Calls: []
-  keyUp:
-    m_PersistentCalls:
+    m_ActionId: f4ce633d-ab7f-4593-a581-732941b8f754
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
       m_Calls: []
+    m_ActionId: d3ba4661-bd60-4277-aca6-110a6527dd98
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b65378ff-00ab-403c-91d9-38b95990a651
+    m_ActionName: Player/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48ba1eac-6a9e-47d9-8da2-a2894c23c43f
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f23d4090-27c7-4a31-af3f-e53cd20253fb
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7feb687f-df6f-46c0-8589-d9b9fe41c70a
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6778b4b5-1c7e-4b29-89a6-4100a5c71df7
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6cc06b1a-9cb6-409e-9b46-e8490ba4292b
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49c1769e-db58-408a-8003-fa5b5c13f9da
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20f48647-146f-4651-bedf-546d09373a13
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a76d6fb-9416-4bc1-9ca0-e5784630e1ad
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 637ae9c7-aa07-4669-8029-7544d960179e
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: baa504d9-94e7-4ff7-8764-927ab0d71d36
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!4 &1522002693
 Transform:
   m_ObjectHideFlags: 0
