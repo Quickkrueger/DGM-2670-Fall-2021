@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "4b8e571f-1cdb-473b-a5aa-5b4ee9f35314",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -248,6 +256,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9e1ab2f-43f2-438c-93ce-50e1564c4f39",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "826abd25-5827-41e6-b075-d8c70655ce37",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
