@@ -14,15 +14,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left:
     controlName: Left
-    controlKey: 97
+    action:
+      m_Name: Action
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b1ad914b-f6cd-450d-b9ca-8b1d58794d0d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 0b202eed-9cf8-4960-83b8-3f823a84a69b
+        m_Path: <Keyboard>/a
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Action
+        m_Flags: 0
   right:
     controlName: Right
-    controlKey: 100
+    action:
+      m_Name: Action
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7190ffb5-4701-4a50-953c-f07def571921
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 594fa8ed-87be-4362-bbe2-5c6fe476f0db
+        m_Path: <Keyboard>/d
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Action
+        m_Flags: 0
   jump:
     controlName: Jump
-    controlKey: 32
+    action:
+      m_Name: Action
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b84533bb-c9db-4511-b869-67c5862f8115
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 606670b0-275e-462b-bdbd-47a2dad23f59
+        m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Action
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 1463cabb-d577-46d0-9cfa-6a21b16a09b9
+        m_Path: <Touchscreen>/primaryTouch/delta/y
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Action
+        m_Flags: 0
   attack:
     controlName: Attack
-    controlKey: 323
+    action:
+      m_Name: Action
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3219997d-2af7-41c3-be62-c6f1b57f725e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 01d7fef3-6b55-4761-b4d7-1beabe827ec5
+        m_Path: <Mouse>/leftButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Action
+        m_Flags: 0
   UseTouch: 1
-  interactionMinimum: 10
