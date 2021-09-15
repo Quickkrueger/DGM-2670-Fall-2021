@@ -30,6 +30,11 @@ public class InputBehavior : MonoBehaviour
         attack.performed += Attack;
         right.performed += Right;
         left.performed += Left;
+
+        jump.Enable();
+        attack.Enable();
+        right.Enable();
+        left.Enable();
     }
 
     private void Left(InputAction.CallbackContext obj)
