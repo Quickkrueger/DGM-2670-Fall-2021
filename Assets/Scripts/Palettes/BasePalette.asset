@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BasePalette
   m_EditorClassIdentifier: 
   primaryColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
-  secondaryColor: {r: 0.227451, g: 0.227451, b: 0.227451, a: 1}
-  accentColor: {r: 0.098039225, g: 0.098039225, b: 0.098039225, a: 1}
+  secondaryColor: {r: 0.21176472, g: 0.21176472, b: 0.21176472, a: 1}
+  accentColor: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   backgroundColor: {r: 1, g: 1, b: 1, a: 0}

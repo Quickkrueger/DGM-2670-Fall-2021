@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,6 +34,18 @@ public class ControlsData : ScriptableObject
         }
 
         return false;
+    }
+
+    public bool Grounded()
+    {
+        if (maxJumps == jumpsAvailable)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void ResetJumps()

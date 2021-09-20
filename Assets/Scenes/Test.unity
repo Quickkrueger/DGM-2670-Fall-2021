@@ -334,7 +334,7 @@ Transform:
   m_GameObject: {fileID: 2013127874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -364,8 +364,9 @@ GameObject:
   - component: {fileID: 2027290661}
   - component: {fileID: 2027290660}
   - component: {fileID: 2027290659}
+  - component: {fileID: 2027290664}
   m_Layer: 0
-  m_Name: Dynamic Sprite
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +385,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsData: {fileID: 11400000, guid: 9996efd8a97b78f45a9ef4cf3382cbc1, type: 2}
-  jumpHeight: 100
+  jumpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2027290664}
+        m_TargetAssemblyTypeName: PlayerAppearance, Assembly-CSharp
+        m_MethodName: StartJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  rightEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  leftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  jumpHeight: 300
 --- !u!50 &2027290660
 Rigidbody2D:
   serializedVersion: 4
@@ -488,3 +513,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027290664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027290658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b858978feae43b40bdd3eb6c23c3844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: f7ef18c9b53a2ab4a90be319c9c82e51, type: 2}

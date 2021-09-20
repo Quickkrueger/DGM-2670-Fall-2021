@@ -9,20 +9,20 @@ public class InputBehavior : MonoBehaviour
 {
     public ControlsData controlsData;
 
+    public UnityEvent jumpEvent;
+    public UnityEvent attackEvent;
+    public UnityEvent rightEvent;
+    public UnityEvent leftEvent;
+
     private InputAction jump;
     private InputAction attack;
     private InputAction right;
     private InputAction left;
-    
-    
 
     public float jumpHeight = 10;
 
     private void Start()
     {
-        
-        
-        
         jump = new InputAction();
         attack = new InputAction();
         right = new InputAction();
@@ -56,15 +56,23 @@ public class InputBehavior : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext obj)
     {
+        attackEvent.Invoke();
     }
 
     private void Jump(InputAction.CallbackContext obj)
     {
+        if (controlsData.Grounded())
+        {
+            jumpEvent.Invoke();
+        }
+        
         if (controlsData.HasMoreJumps())
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpHeight);
             controlsData.UseJump();
         }
+
+        
     }
     
     

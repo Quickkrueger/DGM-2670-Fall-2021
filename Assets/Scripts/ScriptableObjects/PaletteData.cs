@@ -24,4 +24,24 @@ public class PaletteData : ScriptableObject
     {
         backgroundColor = newColor;
     }
+
+    public Color GetColor(int index)
+    {
+        if (index == 0)
+        {
+            return primaryColor;
+        }
+        else if (index == 1)
+        {
+            return secondaryColor;
+        }
+        else if (index == 2)
+        {
+            return accentColor;
+        }
+        else
+        {
+            return backgroundColor;
+        }
+    }
 }
