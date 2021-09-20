@@ -9,7 +9,36 @@ public class ControlsData : ScriptableObject
     public ControlPairing jump;
     public ControlPairing attack;
 
+    public int maxJumps = 1;
+
+    private int jumpsAvailable;
+
     public bool UseTouch;
+
+    public ControlsData()
+    {
+        jumpsAvailable = maxJumps;
+    }
+
+    public void UseJump()
+    {
+        jumpsAvailable--;
+    }
+
+    public bool HasMoreJumps()
+    {
+        if (jumpsAvailable > 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void ResetJumps()
+    {
+        jumpsAvailable = maxJumps;
+    }
     
     
 [System.Serializable]

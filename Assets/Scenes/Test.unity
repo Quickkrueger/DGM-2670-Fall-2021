@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 2013127877}
   - component: {fileID: 2013127876}
   - component: {fileID: 2013127875}
+  - component: {fileID: 2013127879}
   m_Layer: 0
   m_Name: Static Sprite
   m_TagString: Untagged
@@ -338,6 +339,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2013127879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013127874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7906a2a2a0fe441b23e2c4836d5fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027290658
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsData: {fileID: 11400000, guid: 9996efd8a97b78f45a9ef4cf3382cbc1, type: 2}
+  jumpHeight: 100
 --- !u!50 &2027290660
 Rigidbody2D:
   serializedVersion: 4

@@ -13,9 +13,16 @@ public class InputBehavior : MonoBehaviour
     private InputAction attack;
     private InputAction right;
     private InputAction left;
+    
+    
+
+    public float jumpHeight = 10;
 
     private void Start()
     {
+        
+        
+        
         jump = new InputAction();
         attack = new InputAction();
         right = new InputAction();
@@ -49,12 +56,15 @@ public class InputBehavior : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext obj)
     {
-        
     }
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000f);
+        if (controlsData.HasMoreJumps())
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpHeight);
+            controlsData.UseJump();
+        }
     }
     
     
