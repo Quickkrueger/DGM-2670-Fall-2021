@@ -12,7 +12,7 @@ public class ControlsData : ScriptableObject
 
     public int maxJumps = 1;
 
-    private int jumpsAvailable;
+    public int jumpsAvailable;
 
     public bool UseTouch;
 

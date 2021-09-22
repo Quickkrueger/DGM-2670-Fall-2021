@@ -92,4 +92,6 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Action
         m_Flags: 0
+  maxJumps: 1
+  jumpsAvailable: 1
   UseTouch: 1

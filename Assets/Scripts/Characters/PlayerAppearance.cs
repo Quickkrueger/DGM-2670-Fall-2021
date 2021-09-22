@@ -67,7 +67,7 @@ public class PlayerAppearance : MonoBehaviour
 
     public void StartJump()
     {
-        StartCoroutine(Jump(new WaitForSeconds(0.5f)));
+        StartCoroutine(Jump(new WaitForSeconds(0.3f)));
     }
 
     public void StopJump()
