@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8b2faae94441743b4461106fc9e8e6, type: 3}
-  m_Name: Wizard
+  m_Script: {fileID: 11500000, guid: 9b96f3dde47b95546955d45c32a3e6d3, type: 3}
+  m_Name: Knight Data
   m_EditorClassIdentifier: 
-  collectableData: {fileID: 11400000, guid: f7ef18c9b53a2ab4a90be319c9c82e51, type: 2}
   collected: 0
+  spriteSheet: {fileID: 0}
+  characterSpriteOffset: 0
+  animations: []
+  characterPalette: {fileID: 0}

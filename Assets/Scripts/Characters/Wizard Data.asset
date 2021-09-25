@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b96f3dde47b95546955d45c32a3e6d3, type: 3}
   m_Name: Wizard Data
   m_EditorClassIdentifier: 
+  collected: 1
   spriteSheet: {fileID: 11400000, guid: 199ab2c9e149f144e95efb525932b5b2, type: 2}
   characterSpriteOffset: 0
   animations:

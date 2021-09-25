@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CollectableSO", menuName = "ScriptableObjects/Utility/CollectableSO", order = 1)]
 public class CollectableSO : ScriptableObject
 {
-    public ScriptableObject collectableData;
     public bool collected;
 
     void Collect()
