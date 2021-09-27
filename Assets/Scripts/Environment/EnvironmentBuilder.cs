@@ -21,7 +21,7 @@ public class EnvironmentBuilder : MonoBehaviour
     {
         int rand = Random.Range(0, 2);
 
-            StartCoroutine(BuildGround(wait));
+        StartCoroutine(BuildGround(wait));
             
         yield return new WaitForSeconds(0f);
         builderRoutine = null;
