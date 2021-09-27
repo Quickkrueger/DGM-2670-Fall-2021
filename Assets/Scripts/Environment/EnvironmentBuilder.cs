@@ -12,7 +12,7 @@ public class EnvironmentBuilder : MonoBehaviour
 
     private Coroutine builderRoutine;
 
-    private void Start()
+    private void Awake()
     {
         builderRoutine = StartCoroutine(Builder(new WaitForSeconds(0.1f)));
     }

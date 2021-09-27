@@ -773,6 +773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8159603648640528082, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: delayToDestroy
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
 --- !u!1001 &1167651495
@@ -1357,7 +1361,7 @@ MonoBehaviour:
   leftEvent:
     m_PersistentCalls:
       m_Calls: []
-  jumpHeight: 300
+  jumpHeight: 400
 --- !u!50 &2027290660
 Rigidbody2D:
   serializedVersion: 4
@@ -1377,7 +1381,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!58 &2027290661
 CircleCollider2D:
