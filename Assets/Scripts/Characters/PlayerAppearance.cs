@@ -58,7 +58,7 @@ public class PlayerAppearance : MonoBehaviour
         {
             StopCoroutine(jumpRoutine);
         }
-
+        
         StartWalk();
     }
 

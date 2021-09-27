@@ -17,7 +17,7 @@ public class Ground : MonoBehaviour
 
             for (int i = 0; i < hit.Length; i++)
             {
-                if (hit[i].collider != null && hit[i].collider == other.collider)
+                if (hit[i].collider != null && hit[i].collider == other.collider && !behavior.controlsData.Grounded())
                 {
                     behavior.controlsData.ResetJumps();
                     appearance.StopJump();
