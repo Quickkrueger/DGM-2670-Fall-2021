@@ -24,44 +24,7 @@ public class PlayerAppearance : MonoBehaviour
         Texture2D texture = characterData.spriteSheet.texture;
         Color[] pixels = texture.GetPixels(spriteX, spriteY - characterData.characterSpriteOffset, 8, 8);
         
-        return SwapPalette(pixels, characterData.spriteSheet.basePalette, characterData.characterPalette);
-    }
-
-    private Texture2D SwapPalette(Color[] sprite, PaletteData oldPalette, PaletteData newPalette)
-    {
-        Texture2D response = new Texture2D(8, 8)
-        {
-            filterMode = FilterMode.Point,
-            wrapMode = TextureWrapMode.Clamp
-        };
-
-        float colorDiff;
-
-        for (int c = 0; c < sprite.Length; c++)
-        {
-            
-            for (int i = 0; i < 4; i++)
-            {
-                colorDiff = new Vector4(
-                    sprite[c].r - oldPalette.GetColor(i).r,
-                    sprite[c].g - oldPalette.GetColor(i).g,
-                    sprite[c].b - oldPalette.GetColor(i).b,
-                    sprite[c].a - oldPalette.GetColor(i).a
-                ).sqrMagnitude;
-
-                //colorDiff = Mathf.Abs(pixels[c].grayscale - SelectPalette(0)[i].grayscale);
-
-                if (colorDiff <= 4 * ((1f / 100f) * (1f / 100f)) && sprite[c].a != 0)
-                {
-                    sprite[c] = newPalette.GetColor(i);
-                    i = 4;
-                }
-            }
-        }
-
-        response.SetPixels(0, 0, 8, 8, sprite);
-        response.Apply();
-        return response;
+        return PaletteSwapper.SwapPalette(pixels, characterData.spriteSheet.basePalette, characterData.characterPalette);
     }
 
     private void Stand()

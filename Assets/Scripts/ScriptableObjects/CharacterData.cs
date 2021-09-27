@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObjects/EntityData/CharacterData", order = 1)]
+[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObjects/Entity/CharacterData", order = 1)]
 public class CharacterData : CollectableSO
 {
     public TextureData spriteSheet;

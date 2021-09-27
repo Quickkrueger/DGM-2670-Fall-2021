@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PaletteData", menuName = "ScriptableObjects/SpriteInfo/PaletteData", order = 1)]
+[CreateAssetMenu(fileName = "PaletteData", menuName = "ScriptableObjects/Sprite/PaletteData", order = 1)]
 public class PaletteData : ScriptableObject
 {
     public Color primaryColor;
