@@ -15,3 +15,4 @@ MonoBehaviour:
   spriteCoords:
   - {x: 8, y: 120}
   - {x: 16, y: 120}
+  durationInSeconds: 0.5

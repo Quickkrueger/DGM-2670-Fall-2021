@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Knight Data
   m_EditorClassIdentifier: 
   collected: 0
-  spriteSheet: {fileID: 0}
+  spriteSheet: {fileID: 11400000, guid: 4d0596db9371af9459682c0c1e4df39a, type: 2}
   characterSpriteOffset: 120
-  animations:
-  - {fileID: 11400000, guid: e422a4d796ce5d247aba8dc3f5efcc30, type: 2}
-  - {fileID: 11400000, guid: dde21b6eda3190e438a232abd4003fb7, type: 2}
-  - {fileID: 11400000, guid: 73d25de23b4609f4c84191728db587fa, type: 2}
-  characterPalette: {fileID: 11400000, guid: 0896e9b7ac3258947bbf2cf750b7c1c2, type: 2}
+  walk: {fileID: 11400000, guid: e422a4d796ce5d247aba8dc3f5efcc30, type: 2}
+  jump: {fileID: 11400000, guid: dde21b6eda3190e438a232abd4003fb7, type: 2}
+  attack: {fileID: 11400000, guid: 73d25de23b4609f4c84191728db587fa, type: 2}
+  characterPalette: {fileID: 11400000, guid: 6acca1cbfdde50a4fb53a244f5193ded, type: 2}

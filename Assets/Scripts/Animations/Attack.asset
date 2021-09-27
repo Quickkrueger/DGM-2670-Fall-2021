@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   spriteCoords:
-  - {x: 8, y: 120}
   - {x: 24, y: 120}
+  - {x: 8, y: 120}
+  durationInSeconds: 1

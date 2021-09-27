@@ -12,7 +12,7 @@ public class Ground : MonoBehaviour
         if (behavior != null)
         {
             RaycastHit2D[] hit;
-            Vector2 startPoint = new Vector2(transform.position.x, transform.position.y);
+            Vector2 startPoint = new Vector2(transform.position.x, transform.position.y + transform.localScale.y * 0.5f);
             hit = Physics2D.BoxCastAll(startPoint,transform.localScale, 0f, Vector2.up, 2f);
             
             Debug.DrawRay(startPoint, Vector2.up, Color.green, 5f);
