@@ -11,7 +11,7 @@ public class PlayerAppearance : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Sprite newSprite = Sprite.Create(InitializePalette(characterData.animations[0].spriteCoords[0].x, characterData.animations[0].spriteCoords[0].y),new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+        Sprite newSprite = Sprite.Create(InitializePalette(characterData.walk.spriteCoords[0].x, characterData.walk.spriteCoords[0].y),new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
         spriteRenderer.sprite = newSprite;
     }
 
@@ -67,7 +67,7 @@ public class PlayerAppearance : MonoBehaviour
 
     public void StartJump()
     {
-        StartCoroutine(Jump(new WaitForSeconds(0.3f)));
+        StartCoroutine(Jump(new WaitForSeconds(characterData.jump.durationInSeconds / (float)characterData.jump.spriteCoords.Length)));
     }
 
     public void StopJump()
@@ -89,13 +89,12 @@ public class PlayerAppearance : MonoBehaviour
 
     private IEnumerator Jump(WaitForSeconds delay)
     {
-        Sprite newSprite = Sprite.Create(InitializePalette(characterData.animations[1].spriteCoords[0].x, characterData.animations[1].spriteCoords[0].y - characterData.characterSpriteOffset),new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
-        spriteRenderer.sprite = newSprite;
-        
-        yield return delay;
-        
-        newSprite = Sprite.Create(InitializePalette(characterData.animations[1].spriteCoords[1].x, characterData.animations[1].spriteCoords[1].y - characterData.characterSpriteOffset),new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
-        spriteRenderer.sprite = newSprite;
+        Sprite newSprite;
+        for (int i = 0; i < characterData.jump.spriteCoords.Length; i++) {
+            newSprite = Sprite.Create(InitializePalette(characterData.jump.spriteCoords[i].x, characterData.jump.spriteCoords[1].y - characterData.characterSpriteOffset), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+            spriteRenderer.sprite = newSprite;
+            yield return delay;
+        }
 
         StartCoroutine(Jump(delay));
     }

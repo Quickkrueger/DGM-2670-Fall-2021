@@ -4,4 +4,5 @@ using UnityEngine;
 public class AnimationData : ScriptableObject
 {
     public Vector2Int[] spriteCoords;
+    public float durationInSeconds = 1f;
 }
