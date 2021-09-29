@@ -1,25 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
     private Rigidbody2D movingRigidbody;
+
+    public float speed = 10f;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         movingRigidbody = GetComponent<Rigidbody2D>();
-        WaitForSeconds delay = new WaitForSeconds(0.01f);
-        
-
-        StartCoroutine(Move(delay));
+        Move();
     }
 
-    IEnumerator Move(WaitForSeconds delay)
+    void Move()
     {
-            transform.Translate(Vector2.left * 0.2f);
-            yield return delay;
-
-        StartCoroutine(Move(delay));
+        movingRigidbody.velocity = Vector2.left * speed;
     }
 }

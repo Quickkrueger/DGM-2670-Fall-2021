@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnvironmentTile : MonoBehaviour
@@ -10,12 +8,18 @@ public class EnvironmentTile : MonoBehaviour
 
     private Collider2D tileCollider;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         tileCollider = GetComponent<Collider2D>();
         
+        CreateTile();
+        
+    }
+
+    void CreateTile()
+    {
         Sprite newSprite = Sprite.Create(InitializePalette(tileData.tileCoord.x, tileData.tileCoord.y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
         spriteRenderer.sprite = newSprite;
         
@@ -35,6 +39,12 @@ public class EnvironmentTile : MonoBehaviour
             spriteRenderer.sortingLayerName = "Foreground";
             tileCollider.isTrigger = true;
         }
+    }
+
+    public void UpdateTile(TileData newData)
+    {
+        tileData = newData;
+        CreateTile();
     }
     
     private Texture2D InitializePalette(int spriteX, int spriteY)

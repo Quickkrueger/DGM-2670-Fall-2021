@@ -180,6 +180,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+--- !u!1001 &66922790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1073418463355390944, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_Name
+      value: Tile (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
 --- !u!1001 &78034115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,11 +494,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c826433474d9af743881c394de3a84fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enviromentData: {fileID: 11400000, guid: 84205f177594a2940afe10ebeb1928c5, type: 2}
   ground: {fileID: 2092725995}
   groundObject: {fileID: 1848722261}
   platform: {fileID: 663035395}
   platformObject: {fileID: 2126945102}
   tilePrefab: {fileID: 1073418463355390944, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+  newestTile: {fileID: 499154870}
 --- !u!4 &415476379
 Transform:
   m_ObjectHideFlags: 0
@@ -460,6 +519,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &499154870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1073418463355390944, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
+  m_PrefabInstance: {fileID: 66922790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &634951126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -772,10 +836,6 @@ PrefabInstance:
     - target: {fileID: 1073418463355390948, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8159603648640528082, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
-      propertyPath: delayToDestroy
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6449d2d471980a04e997095aafbebb57, type: 3}

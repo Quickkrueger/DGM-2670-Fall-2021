@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902ea9b2eca0304e887cc5dcffe5a4c, type: 3}
+  m_Name: DefaultEnvironment
+  m_EditorClassIdentifier: 
+  groundTiles:
+  - {fileID: 11400000, guid: 922960efa53220346ac1eef39719984b, type: 2}
+  - {fileID: 11400000, guid: 94f8858be2c71b24a973caa54fbd2e4b, type: 2}
+  undergroundTiles:
+  - {fileID: 11400000, guid: ddd6c4ec6c1606c48bc65393548d30ca, type: 2}
+  - {fileID: 11400000, guid: 1af4232ac912c6649902b4534d303c5c, type: 2}
+  decorationTiles: []
