@@ -1,5 +1,3 @@
-
-using Packages.Rider.Editor.UnitTesting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;

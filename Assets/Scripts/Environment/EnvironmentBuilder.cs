@@ -26,7 +26,7 @@ public class EnvironmentBuilder : MonoBehaviour
 
         int numTiles = Random.Range(5, 10);
 
-        WaitForSeconds wait = new WaitForSeconds((float) numTiles * 0.1f - Time.deltaTime);
+        WaitForSeconds wait = new WaitForSeconds((float) numTiles * 0.1f - Time.deltaTime / 2);
         
         StartCoroutine(BuildGround(wait, numTiles));
             
@@ -52,13 +52,17 @@ public class EnvironmentBuilder : MonoBehaviour
             
             randTile = Random.Range(0, enviromentData.undergroundTiles.Length);
             
-            CreateTile(randTile, 1f, enviromentData.undergroundTiles, newestTile.transform.position + Vector3.right);
+            CreateTile(randTile, 1f, enviromentData.undergroundTiles, newestTile.transform.position);
             
             randTile = Random.Range(0, enviromentData.undergroundTiles.Length);
             
-            CreateTile(randTile, 2f, enviromentData.undergroundTiles, newestTile.transform.position + Vector3.right);
-            
-            
+            CreateTile(randTile, 2f, enviromentData.undergroundTiles, newestTile.transform.position);
+
+            randTile = Random.Range(0, enviromentData.undergroundTiles.Length);
+
+            CreateTile(randTile, 3f, enviromentData.undergroundTiles, newestTile.transform.position);
+
+
         }
         yield return wait;
 

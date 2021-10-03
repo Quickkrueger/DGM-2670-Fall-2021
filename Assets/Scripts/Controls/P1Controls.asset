@@ -52,8 +52,8 @@ MonoBehaviour:
     controlName: Jump
     action:
       m_Name: Action
-      m_Type: 0
-      m_ExpectedControlType: 
+      m_Type: 2
+      m_ExpectedControlType: Vector2
       m_Id: b84533bb-c9db-4511-b869-67c5862f8115
       m_Processors: 
       m_Interactions: 
@@ -68,8 +68,8 @@ MonoBehaviour:
         m_Flags: 0
       - m_Name: 
         m_Id: 1463cabb-d577-46d0-9cfa-6a21b16a09b9
-        m_Path: <Touchscreen>/primaryTouch/delta/y
-        m_Interactions: 
+        m_Path: <Touchscreen>/primaryTouch/position
+        m_Interactions: Hold(pressPoint=0.25)
         m_Processors: 
         m_Groups: 
         m_Action: Action
@@ -78,7 +78,7 @@ MonoBehaviour:
     controlName: Attack
     action:
       m_Name: Action
-      m_Type: 0
+      m_Type: 2
       m_ExpectedControlType: 
       m_Id: 3219997d-2af7-41c3-be62-c6f1b57f725e
       m_Processors: 
