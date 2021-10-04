@@ -66,6 +66,7 @@ public class InputBehavior : MonoBehaviour
         
         if (controlsData.HasMoreJumps())
         {
+            transform.position = transform.position + Vector3.up * 0.1f;
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpHeight);
             controlsData.UseJump();
         }
