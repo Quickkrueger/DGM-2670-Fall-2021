@@ -7,6 +7,7 @@ public class PlayerAppearance : MonoBehaviour
 
     public CharacterData characterData;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer childRenderer;
 
     Coroutine walkRoutine;
     Coroutine jumpRoutine;
@@ -15,6 +16,7 @@ public class PlayerAppearance : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         Stand();
     }
@@ -76,7 +78,7 @@ public class PlayerAppearance : MonoBehaviour
         for (int i = 0; i < characterData.attack.spriteCoords.Length; i++)
         {
             newSprite = Sprite.Create(InitializePalette(characterData.attack.spriteCoords[i].x, characterData.attack.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
-            spriteRenderer.sprite = newSprite;
+            childRenderer.sprite = newSprite;
             yield return delay;
         }
 
