@@ -10,7 +10,7 @@ public class Ground : MonoBehaviour
         {
             RaycastHit2D[] hit;
             Vector2 startPoint = new Vector2(transform.position.x, transform.position.y + transform.localScale.y * 0.5f);
-            hit = Physics2D.BoxCastAll(startPoint,transform.localScale, 0f, Vector2.up, 2f);
+            hit = Physics2D.BoxCastAll(startPoint,transform.localScale * 0.9f, 0f, Vector2.up, 2f);
 
             for (int i = 0; i < hit.Length; i++)
             {
