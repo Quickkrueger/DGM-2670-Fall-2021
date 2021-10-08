@@ -21,6 +21,11 @@ public class EnvironmentBuilder : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    public void StartBuilding()
+    {
         builderRoutine = StartCoroutine(Builder());
     }
 
@@ -116,7 +121,15 @@ public class EnvironmentBuilder : MonoBehaviour
             else if (i == 0)
             {
                 randDist = Random.Range(1, 8);
-                newestTile = CreateTile(randTile, 0f, enviromentData.groundTiles, newestTile.transform.position + Vector3.up * 2f  + Vector3.right * (float)randDist);
+
+                if (newestTile.transform.position.y - platform.position.y <= 2f)
+                {
+                    newestTile = CreateTile(randTile, 0f, enviromentData.groundTiles, newestTile.transform.position + Vector3.up * 2f + Vector3.right * (float)randDist);
+                }
+                else
+                {
+                    newestTile = CreateTile(randTile, 0f, enviromentData.groundTiles, newestTile.transform.position + Vector3.up * -2f + Vector3.right * (float)randDist);
+                }
             }
             else
             {
