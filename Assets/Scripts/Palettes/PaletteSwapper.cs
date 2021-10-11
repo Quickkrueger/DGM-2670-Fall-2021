@@ -5,9 +5,9 @@ using UnityEngine;
 public class PaletteSwapper
 {
     // Start is called before the first frame update
-    public static Texture2D SwapPalette(Color[] sprite, PaletteData oldPalette, PaletteData newPalette)
+    public static Texture2D SwapPalette(Color[] sprite, PaletteData oldPalette, PaletteData newPalette, int x, int y, int width, int height)
     {
-        Texture2D response = new Texture2D(8, 8)
+        Texture2D response = new Texture2D(width, height)
         {
             filterMode = FilterMode.Point,
             wrapMode = TextureWrapMode.Clamp
@@ -37,7 +37,7 @@ public class PaletteSwapper
             }
         }
 
-        response.SetPixels(0, 0, 8, 8, sprite);
+        response.SetPixels(0, 0,  width, height, sprite);
         response.Apply();
         return response;
     }

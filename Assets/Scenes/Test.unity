@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 469641399}
   - component: {fileID: 469641401}
   - component: {fileID: 469641400}
+  - component: {fileID: 469641402}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -669,6 +670,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469641398}
   m_CullTransparentMesh: 1
+--- !u!114 &469641402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469641398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946824351cf52d42be379377580dc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePalette: {fileID: 11400000, guid: c9d329c8f54c4ef42bfcd2577a248719, type: 2}
+  UIPalette: {fileID: 11400000, guid: 6d2365f7106b8ae4a8042b68f7639c17, type: 2}
 --- !u!1 &499154870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1073418463355390944, guid: 6449d2d471980a04e997095aafbebb57, type: 3}
@@ -1278,6 +1293,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  basePalette: {fileID: 0}
+  UIPalette: {fileID: 0}
 --- !u!114 &1312154315
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class PlayerAppearance : MonoBehaviour
         Texture2D texture = characterData.spriteSheet.texture;
         Color[] pixels = texture.GetPixels(spriteX, spriteY - characterData.characterSpriteOffset, 8, 8);
         
-        return PaletteSwapper.SwapPalette(pixels, characterData.spriteSheet.basePalette, characterData.characterPalette);
+        return PaletteSwapper.SwapPalette(pixels, characterData.spriteSheet.basePalette, characterData.characterPalette, 0, 0, 8, 8);
     }
 
     private void Stand()

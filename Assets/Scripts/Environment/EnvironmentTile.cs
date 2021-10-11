@@ -52,6 +52,6 @@ public class EnvironmentTile : MonoBehaviour
         Texture2D texture = tileData.tileSheet.texture;
         Color[] pixels = texture.GetPixels(spriteX, spriteY, 8, 8);
         
-        return PaletteSwapper.SwapPalette(pixels, tileData.tileSheet.basePalette, tileData.tilePalette);
+        return PaletteSwapper.SwapPalette(pixels, tileData.tileSheet.basePalette, tileData.tilePalette, 0, 0, 8, 8);
     }
 }
