@@ -19,11 +19,6 @@ public class EnvironmentBuilder : MonoBehaviour
 
     private Coroutine builderRoutine;
 
-    private void Awake()
-    {
-        
-    }
-
     public void StartBuilding()
     {
         builderRoutine = StartCoroutine(Builder());

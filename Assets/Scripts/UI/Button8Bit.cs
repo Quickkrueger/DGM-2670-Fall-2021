@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 public class Button8Bit : Button
 {
-    [SerializeField]
     public PaletteData basePalette;
-    [SerializeField]
     public PaletteData UIPalette;
 
     Image UIImage;
     Text UIText;
 
-    protected override void Start()
+    public void Initialize(PaletteData basePal, PaletteData UIPal)
     {
-        base.Start();
+        basePalette = basePal;
+        UIPalette = UIPal;
+        
         UIText = GetComponentInChildren<Text>();
         UIImage = GetComponent<Image>();
         UIImage.sprite = Sprite.Create(InitializeUIElement(UIImage.sprite), new Rect(0, 0, UIImage.sprite.rect.width, UIImage.sprite.rect.height), new Vector2(0.5f, 0.5f));
@@ -25,6 +25,7 @@ public class Button8Bit : Button
         ss.pressedSprite = Sprite.Create(InitializeUIElement(ss.pressedSprite), new Rect(0, 0, ss.pressedSprite.rect.width, ss.pressedSprite.rect.height), new Vector2(0.5f, 0.5f));
         ss.selectedSprite = Sprite.Create(InitializeUIElement(ss.selectedSprite), new Rect(0, 0, ss.selectedSprite.rect.width, ss.selectedSprite.rect.height), new Vector2(0.5f, 0.5f));
 
+        spriteState = ss;
         UIText.color = UIPalette.accentColor;
     }
 
@@ -32,7 +33,7 @@ public class Button8Bit : Button
     {
         Texture2D texture = spriteToChange.texture;
         Color[] pixels = texture.GetPixels((int)spriteToChange.rect.x, (int)spriteToChange.rect.y, (int)spriteToChange.rect.width, (int)spriteToChange.rect.height);
-
+        
         return PaletteSwapper.SwapPalette(pixels, basePalette, UIPalette, (int)spriteToChange.rect.x, (int)spriteToChange.rect.y, (int)spriteToChange.rect.width, (int)spriteToChange.rect.height);
     }
 

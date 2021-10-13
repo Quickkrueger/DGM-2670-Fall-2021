@@ -20,7 +20,7 @@ public class PlayerAppearance : MonoBehaviour
 
         Stand();
     }
-
+    
     private Texture2D InitializePalette(int spriteX, int spriteY)
     {
         Texture2D texture = characterData.spriteSheet.texture;

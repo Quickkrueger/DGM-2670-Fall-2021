@@ -17,7 +17,6 @@ public class PaletteSwapper
 
         for (int c = 0; c < sprite.Length; c++)
         {
-
             for (int i = 0; i < 4; i++)
             {
                 colorDiff = new Vector4(
