@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7e14667773d9d4a87e66d68a1a279d, type: 3}
-  m_Name: CharactersCollection
+  m_Script: {fileID: 11500000, guid: 2bb11d24a9bae1547905778f42e39378, type: 3}
+  m_Name: P1
   m_EditorClassIdentifier: 
-  collectables:
-  - {fileID: 11400000, guid: f7ef18c9b53a2ab4a90be319c9c82e51, type: 2}
-  - {fileID: 11400000, guid: 35f8cfc65e439484e8039f323ab0ab74, type: 2}
+  visualData: {fileID: 11400000, guid: f7ef18c9b53a2ab4a90be319c9c82e51, type: 2}
+  controlData: {fileID: 11400000, guid: 9996efd8a97b78f45a9ef4cf3382cbc1, type: 2}

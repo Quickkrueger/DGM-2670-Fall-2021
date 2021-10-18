@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerAppearance : MonoBehaviour
 {
-
-    public CharacterData characterData;
+    public PlayerConfigData playerData;
     private SpriteRenderer spriteRenderer;
     private SpriteRenderer childRenderer;
 
@@ -15,6 +14,7 @@ public class PlayerAppearance : MonoBehaviour
 
     private void Start()
     {
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
@@ -23,21 +23,26 @@ public class PlayerAppearance : MonoBehaviour
     
     private Texture2D InitializePalette(int spriteX, int spriteY)
     {
-        Texture2D texture = characterData.spriteSheet.texture;
-        Color[] pixels = texture.GetPixels(spriteX, spriteY - characterData.characterSpriteOffset, 8, 8);
+        Texture2D texture = playerData.visualData.spriteSheet.texture;
+        Color[] pixels = texture.GetPixels(spriteX, spriteY - playerData.visualData.characterSpriteOffset, 8, 8);
         
-        return PaletteSwapper.SwapPalette(pixels, characterData.spriteSheet.basePalette, characterData.characterPalette, 0, 0, 8, 8);
+        return PaletteSwapper.SwapPalette(pixels, playerData.visualData.spriteSheet.basePalette, playerData.visualData.characterPalette, 0, 0, 8, 8);
+    }
+
+    public void UpdateSprite()
+    {
+        Stand();
     }
 
     private void Stand()
     {
-        Sprite newSprite = Sprite.Create(InitializePalette(characterData.walk.spriteCoords[0].x, characterData.walk.spriteCoords[0].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+        Sprite newSprite = Sprite.Create(InitializePalette(playerData.visualData.walk.spriteCoords[0].x, playerData.visualData.walk.spriteCoords[0].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10);
         spriteRenderer.sprite = newSprite;
     }
 
     public void StartWalk()
     {
-        walkRoutine = StartCoroutine(Walk(new WaitForSeconds(characterData.walk.durationInSeconds / (float)characterData.walk.spriteCoords.Length)));
+        walkRoutine = StartCoroutine(Walk(new WaitForSeconds(playerData.visualData.walk.durationInSeconds / (float)playerData.visualData.walk.spriteCoords.Length)));
     }
 
     public void StopWalk()
@@ -51,7 +56,7 @@ public class PlayerAppearance : MonoBehaviour
     public void StartJump()
     {
         StopWalk();
-        jumpRoutine = StartCoroutine(Jump(new WaitForSeconds(characterData.jump.durationInSeconds / (float)characterData.jump.spriteCoords.Length)));
+        jumpRoutine = StartCoroutine(Jump(new WaitForSeconds(playerData.visualData.jump.durationInSeconds / (float)playerData.visualData.jump.spriteCoords.Length)));
     }
 
     public void StopJump()
@@ -68,16 +73,16 @@ public class PlayerAppearance : MonoBehaviour
     {
         if (attackRoutine == null)
         {
-            attackRoutine = StartCoroutine(Attack(new WaitForSeconds(characterData.attack.durationInSeconds / (float)characterData.attack.spriteCoords.Length)));
+            attackRoutine = StartCoroutine(Attack(new WaitForSeconds(playerData.visualData.attack.durationInSeconds / (float)playerData.visualData.attack.spriteCoords.Length)));
         }
     }
 
     IEnumerator Attack(WaitForSeconds delay)
     {
         Sprite newSprite;
-        for (int i = 0; i < characterData.attack.spriteCoords.Length; i++)
+        for (int i = 0; i < playerData.visualData.attack.spriteCoords.Length; i++)
         {
-            newSprite = Sprite.Create(InitializePalette(characterData.attack.spriteCoords[i].x, characterData.attack.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+            newSprite = Sprite.Create(InitializePalette(playerData.visualData.attack.spriteCoords[i].x, playerData.visualData.attack.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10);
             childRenderer.sprite = newSprite;
             yield return delay;
         }
@@ -89,9 +94,9 @@ public class PlayerAppearance : MonoBehaviour
     {
 
         Sprite newSprite;
-        for (int i = 0; i < characterData.walk.spriteCoords.Length; i++)
+        for (int i = 0; i < playerData.visualData.walk.spriteCoords.Length; i++)
         {
-            newSprite = Sprite.Create(InitializePalette(characterData.walk.spriteCoords[i].x, characterData.walk.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+            newSprite = Sprite.Create(InitializePalette(playerData.visualData.walk.spriteCoords[i].x, playerData.visualData.walk.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10);
             spriteRenderer.sprite = newSprite;
             yield return delay;
         }
@@ -102,8 +107,8 @@ public class PlayerAppearance : MonoBehaviour
     private IEnumerator Jump(WaitForSeconds delay)
     {
         Sprite newSprite;
-        for (int i = 0; i < characterData.jump.spriteCoords.Length; i++) {
-            newSprite = Sprite.Create(InitializePalette(characterData.jump.spriteCoords[i].x, characterData.jump.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 8);
+        for (int i = 0; i < playerData.visualData.jump.spriteCoords.Length; i++) {
+            newSprite = Sprite.Create(InitializePalette(playerData.visualData.jump.spriteCoords[i].x, playerData.visualData.jump.spriteCoords[1].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10);
             spriteRenderer.sprite = newSprite;
             yield return delay;
         }

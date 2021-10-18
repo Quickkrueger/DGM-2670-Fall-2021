@@ -5,6 +5,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class InputBehavior : MonoBehaviour
 {
+    public PlayerConfigData playerData;
     public ControlsData controlsData;
 
     public UnityEvent jumpEvent;
@@ -21,6 +22,8 @@ public class InputBehavior : MonoBehaviour
 
     private void Start()
     {
+        controlsData = playerData.controlData;
+        
         jump = new InputAction();
         attack = new InputAction();
         right = new InputAction();
