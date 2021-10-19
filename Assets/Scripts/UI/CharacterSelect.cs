@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -17,6 +16,7 @@ public class CharacterSelect : MonoBehaviour
         {
             newSprite = Instantiate(characterPrefab);
             newSprite.GetComponent<SelectableCharacter>().InitializeCharacter(allSprites.collectables[i]);
+            newSprite.GetComponent<Button>().interactable = allSprites.collectables[i].collected;
             newSprite.transform.parent = transform;
         }
     }
