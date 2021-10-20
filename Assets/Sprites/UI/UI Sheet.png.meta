@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 8338158087826392682
     second: UI Sheet_3
+  - first:
+      213: 8224185386143790105
+    second: UI Sheet_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -242,6 +245,27 @@ TextureImporter:
       bones: []
       spriteID: a6641f97a9617b370800000000000000
       internalID: 8338158087826392682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 104
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9143f0cf80d222270800000000000000
+      internalID: 8224185386143790105
       vertices: []
       indices: 
       edges: []

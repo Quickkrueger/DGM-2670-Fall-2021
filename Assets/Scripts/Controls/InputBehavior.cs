@@ -8,6 +8,8 @@ public class InputBehavior : MonoBehaviour
     public PlayerConfigData playerData;
     public ControlsData controlsData;
 
+    private Rigidbody2D rigidbody2D;
+
     public UnityEvent jumpEvent;
     public UnityEvent attackEvent;
     public UnityEvent rightEvent;
@@ -23,6 +25,7 @@ public class InputBehavior : MonoBehaviour
     private void Start()
     {
         controlsData = playerData.controlData;
+        rigidbody2D = GetComponent<Rigidbody2D>();
         
         jump = new InputAction();
         attack = new InputAction();
@@ -75,6 +78,18 @@ public class InputBehavior : MonoBehaviour
         }
 
         
+    }
+
+    public void ReturnToOrigin()
+    {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+    }
+
+    public void DeathBehavior()
+    {
+        rigidbody2D.constraints = RigidbodyConstraints2D.None;
     }
     
     
