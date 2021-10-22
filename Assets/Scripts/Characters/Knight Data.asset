@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b96f3dde47b95546955d45c32a3e6d3, type: 3}
   m_Name: Knight Data
   m_EditorClassIdentifier: 
-  collected: 0
+  collected: 1
   spriteSheet: {fileID: 11400000, guid: 4d0596db9371af9459682c0c1e4df39a, type: 2}
   characterSpriteOffset: 120
   walk: {fileID: 11400000, guid: e422a4d796ce5d247aba8dc3f5efcc30, type: 2}

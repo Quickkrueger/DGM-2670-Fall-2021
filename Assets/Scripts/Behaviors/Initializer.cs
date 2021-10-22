@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class MyEvent : UnityEvent<PaletteData, PaletteData>
@@ -31,5 +32,10 @@ public class Initializer : MonoBehaviour
     public void UnPause()
     {
         Time.timeScale = 1;
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

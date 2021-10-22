@@ -85,6 +85,7 @@ public class InputBehavior : MonoBehaviour
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        rigidbody2D.velocity = Vector2.zero;
     }
 
     public void DeathBehavior()
