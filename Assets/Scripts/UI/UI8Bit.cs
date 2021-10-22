@@ -19,7 +19,7 @@ public class UI8Bit : MonoBehaviour
         Texture2D texture = UIImage.sprite.texture;
         Color[] pixels = texture.GetPixels((int)UIImage.sprite.rect.x, (int)UIImage.sprite.rect.y, (int)UIImage.sprite.rect.width, (int)UIImage.sprite.rect.height);
 
-        return PaletteSwapper.SwapPalette(pixels, basePalette, UIPalette, (int)UIImage.sprite.rect.x, (int)UIImage.sprite.rect.y, (int)UIImage.sprite.rect.width, (int)UIImage.sprite.rect.height);
+        return PaletteSwapper.SwapPalette( UIPalette, (int)UIImage.sprite.rect.x, (int)UIImage.sprite.rect.y, (int)UIImage.sprite.rect.width, (int)UIImage.sprite.rect.height);
     }
 
 
