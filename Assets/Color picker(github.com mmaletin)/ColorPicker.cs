@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,6 +28,13 @@ public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     private Image image;
 
     float h, s, v;
+
+    public void ChangeColor(Image inputImage)
+    {
+        color = inputImage.color;
+    }
+    
+    
 
     public Color color
     {
