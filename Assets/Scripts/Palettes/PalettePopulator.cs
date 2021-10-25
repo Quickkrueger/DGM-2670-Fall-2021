@@ -14,7 +14,13 @@ public class PalettePopulator : MonoBehaviour
     void InitializePalettes()
     {
         GameObject nextPalette;
-        for (int i = 0; i < allPalettes.palettes.Count; i++)
+        
+        nextPalette = Instantiate(paletteObjectPrefab, transform);
+
+        nextPalette.GetComponent<UI8Bit>().UIPalette = allPalettes.palettes[0];
+        nextPalette.GetComponent<UI8Bit>().FillColors();
+        
+        for (int i = 1; i < allPalettes.palettes.Count; i++)
         {
 
             nextPalette = Instantiate(paletteObjectPrefab, transform);
