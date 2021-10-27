@@ -47,6 +47,10 @@ public class UI8Bit : MonoBehaviour
         FillColors();
     }
 
+    private void OnDestroy()
+    {
+        UIPalette.OnColorChanged -= ColorChanged;
+    }
 
 
 }

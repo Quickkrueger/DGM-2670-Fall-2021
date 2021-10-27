@@ -54,6 +54,11 @@ public class Button8Bit : MonoBehaviour
         Initialize();
     }
 
+    private void OnDestroy()
+    {
+        UIPalette.OnColorChanged -= ColorChanged;
+    }
+
 
 }
 

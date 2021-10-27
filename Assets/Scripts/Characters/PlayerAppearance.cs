@@ -21,7 +21,7 @@ public class PlayerAppearance : MonoBehaviour
 
         Stand();
     }
-    
+
     private Texture2D InitializePalette(int spriteX, int spriteY)
     {
         Texture2D texture = playerData.visualData.spriteSheet.texture;
@@ -121,8 +121,13 @@ public class PlayerAppearance : MonoBehaviour
     {
         Stand();
     }
-    
-    
+
+    private void OnDestroy()
+    {
+        playerData.visualData.characterPalette.OnColorChanged -= ColorChanged;
+    }
+
+
 
 
 }

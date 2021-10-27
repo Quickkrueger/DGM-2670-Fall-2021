@@ -60,4 +60,9 @@ public class EnvironmentTile : MonoBehaviour
     {
         CreateTile();
     }
+
+    private void OnDestroy()
+    {
+        tileData.tilePalette.OnColorChanged -= ColorChanged;
+    }
 }
