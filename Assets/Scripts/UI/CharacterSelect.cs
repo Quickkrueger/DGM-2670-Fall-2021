@@ -17,7 +17,7 @@ public class CharacterSelect : MonoBehaviour
             newSprite = Instantiate(characterPrefab);
             newSprite.GetComponent<SelectableCharacter>().InitializeCharacter(allSprites.collectables[i]);
             newSprite.GetComponent<Button>().interactable = allSprites.collectables[i].collected;
-            newSprite.transform.parent = transform;
+            newSprite.transform.SetParent(transform);
         }
     }
 

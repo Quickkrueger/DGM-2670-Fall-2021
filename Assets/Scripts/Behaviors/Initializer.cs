@@ -8,19 +8,12 @@ public class MyEvent : UnityEvent<PaletteData, PaletteData>
 }
 public class Initializer : MonoBehaviour
 {
-    
-    public PaletteData basePalette;
-    public PaletteData UIPalette;
-    
-    [SerializeField]
-    public MyEvent UIStart;
 
     public UnityEvent startEvent;
     // Start is called before the first frame update
     void Start()
     {
         Pause();
-        UIStart.Invoke(basePalette, UIPalette);
         startEvent.Invoke();
     }
 

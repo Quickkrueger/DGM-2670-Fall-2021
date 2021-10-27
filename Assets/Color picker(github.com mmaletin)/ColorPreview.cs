@@ -33,7 +33,8 @@ public class ColorPreview : MonoBehaviour
 
     private IEnumerator OnColorChangedAsync()
     {
-        yield return new WaitForSeconds(0.1f);
+        Debug.Log("Working async");
+        yield return new WaitForSecondsRealtime(0.1f);
         ColorChangedDelayed.Invoke();
     }
 
@@ -70,7 +71,7 @@ public class ColorPreview : MonoBehaviour
 
     public IEnumerator OnClickAsync()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         OnClickDelayed.Invoke();
     }
 }

@@ -6,35 +6,45 @@ public class UI8Bit : MonoBehaviour
 {
     public PaletteData basePalette;
     public PaletteData UIPalette;
+    Sprite imageStorage;
 
     Image UIImage;
 
-    private void Start()
+    private void Awake()
     {
+        UIImage = GetComponent<Image>();
+        imageStorage = UIImage.sprite;
         FillColors();
+        UIPalette.OnColorChanged += ColorChanged;
     }
 
-    Texture2D InitializeUIElement()
+    Texture2D InitializeUIElement(PaletteData oldPalette, PaletteData newPalette)
     {
-        Texture2D texture = UIImage.sprite.texture;
-        Color[] pixels = texture.GetPixels((int)UIImage.sprite.rect.x, (int)UIImage.sprite.rect.y, (int)UIImage.sprite.rect.width, (int)UIImage.sprite.rect.height);
+        Texture2D texture = imageStorage.texture;
+        Color[] pixels = texture.GetPixels((int)imageStorage.rect.x, (int)imageStorage.rect.y, (int)imageStorage.rect.width, (int)imageStorage.rect.height);
 
-        return PaletteSwapper.SwapPalette(pixels, basePalette, UIPalette, (int)UIImage.sprite.rect.x, (int)UIImage.sprite.rect.y, (int)UIImage.sprite.rect.width, (int)UIImage.sprite.rect.height);
+        return PaletteSwapper.SwapPalette(pixels, oldPalette, newPalette, (int)imageStorage.rect.x, (int)imageStorage.rect.y, (int)imageStorage.rect.width, (int)imageStorage.rect.height);
     }
 
     public void FillColors()
     {
-        UIImage = GetComponent<Image>();
-        UIImage.sprite = Sprite.Create(InitializeUIElement(), new Rect(0, 0, UIImage.sprite.rect.width, UIImage.sprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        
+        UIImage.sprite = Sprite.Create(InitializeUIElement(basePalette, UIPalette), new Rect(0, 0, imageStorage.rect.width, imageStorage.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
         UIImage.pixelsPerUnitMultiplier = 0.1f;
     }
     
     public void FillColors(UI8Bit uiData)
     {
+        UIPalette.OnColorChanged -= ColorChanged;
         UIPalette = uiData.UIPalette;
-        UIImage = GetComponent<Image>();
-        UIImage.sprite = Sprite.Create(InitializeUIElement(), new Rect(0, 0, UIImage.sprite.rect.width, UIImage.sprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        UIPalette.OnColorChanged += ColorChanged;
+        UIImage.sprite = Sprite.Create(InitializeUIElement(basePalette, UIPalette), new Rect(0, 0, imageStorage.rect.width, imageStorage.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f));
         UIImage.pixelsPerUnitMultiplier = 0.1f;
+    }
+
+    public void ColorChanged()
+    {
+        FillColors();
     }
 
 

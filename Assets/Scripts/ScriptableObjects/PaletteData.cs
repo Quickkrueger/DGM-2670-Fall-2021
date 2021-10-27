@@ -63,5 +63,10 @@ public class PaletteData : ScriptableObject
         {
             backgroundColor = newColor;
         }
+
+        OnColorChanged();
     }
+
+    public delegate void OnColorChangedDelegate();
+    public event OnColorChangedDelegate OnColorChanged;
 }

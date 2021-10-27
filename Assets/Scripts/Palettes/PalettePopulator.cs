@@ -13,20 +13,24 @@ public class PalettePopulator : MonoBehaviour
 
     void InitializePalettes()
     {
-        GameObject nextPalette;
+        List<GameObject> nextPalette;
+        nextPalette = new List<GameObject>();
 
-        nextPalette = transform.GetChild(0).gameObject;
-
-        nextPalette.GetComponent<UI8Bit>().UIPalette = allPalettes.palettes[0];
-        nextPalette.GetComponent<UI8Bit>().FillColors();
+        nextPalette.Add(transform.GetChild(0).gameObject);
         
         for (int i = 1; i < allPalettes.palettes.Count; i++)
         {
+            nextPalette.Add(Instantiate(paletteObjectPrefab, transform));
+        }
 
-            nextPalette = Instantiate(paletteObjectPrefab, transform);
 
-            nextPalette.GetComponent<UI8Bit>().UIPalette = allPalettes.palettes[i];
-            nextPalette.GetComponent<UI8Bit>().FillColors();
+        for(int i = 0; i < nextPalette.Count; i++)
+        {
+            UI8Bit ui = nextPalette[i].GetComponent<UI8Bit>();
+            ui.UIPalette.OnColorChanged -= ui.ColorChanged;
+            ui.UIPalette = allPalettes.palettes[i];
+            ui.UIPalette.OnColorChanged += ui.ColorChanged;
+            ui.FillColors();
         }
     }
 }

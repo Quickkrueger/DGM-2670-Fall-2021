@@ -12,11 +12,12 @@ public class PlayerAppearance : MonoBehaviour
     Coroutine jumpRoutine;
     Coroutine attackRoutine;
 
-    private void Start()
+    private void Awake()
     {
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         childRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        playerData.visualData.characterPalette.OnColorChanged += ColorChanged;
 
         Stand();
     }
@@ -114,6 +115,11 @@ public class PlayerAppearance : MonoBehaviour
         }
 
         jumpRoutine = StartCoroutine(Jump(delay));
+    }
+
+    void ColorChanged()
+    {
+        Stand();
     }
     
     

@@ -2,30 +2,42 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Button8Bit : Button
+[RequireComponent(typeof(Button))]
+public class Button8Bit : MonoBehaviour
 {
     public PaletteData basePalette;
     public PaletteData UIPalette;
+    Sprite imageStorage;
+    SpriteState stateStorage;
 
     Image UIImage;
     Text UIText;
 
-    public void Initialize(PaletteData basePal, PaletteData UIPal)
+    protected void Awake()
     {
-        basePalette = basePal;
-        UIPalette = UIPal;
-        
+
         UIText = GetComponentInChildren<Text>();
         UIImage = GetComponent<Image>();
-        UIImage.sprite = Sprite.Create(InitializeUIElement(UIImage.sprite), new Rect(0, 0, UIImage.sprite.rect.width, UIImage.sprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        imageStorage = UIImage.sprite;
+        stateStorage = GetComponent<Button>().spriteState;
 
-        SpriteState ss = spriteState;
-        ss.highlightedSprite = Sprite.Create(InitializeUIElement(ss.highlightedSprite), new Rect(0, 0, ss.highlightedSprite.rect.width, ss.highlightedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
-        ss.disabledSprite = Sprite.Create(InitializeUIElement(ss.disabledSprite), new Rect(0, 0, ss.disabledSprite.rect.width, ss.disabledSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
-        ss.pressedSprite = Sprite.Create(InitializeUIElement(ss.pressedSprite), new Rect(0, 0, ss.pressedSprite.rect.width, ss.pressedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
-        ss.selectedSprite = Sprite.Create(InitializeUIElement(ss.selectedSprite), new Rect(0, 0, ss.selectedSprite.rect.width, ss.selectedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        UIPalette.OnColorChanged += ColorChanged;
 
-        spriteState = ss;
+        Initialize();
+    }
+
+    public void Initialize()
+    {        
+        
+        UIImage.sprite = Sprite.Create(InitializeUIElement(imageStorage), new Rect(0, 0, imageStorage.rect.width, imageStorage.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+
+        SpriteState ss = stateStorage;
+        ss.highlightedSprite = Sprite.Create(InitializeUIElement(stateStorage.highlightedSprite), new Rect(0, 0, stateStorage.highlightedSprite.rect.width, stateStorage.highlightedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        ss.disabledSprite = Sprite.Create(InitializeUIElement(stateStorage.disabledSprite), new Rect(0, 0, stateStorage.disabledSprite.rect.width, stateStorage.disabledSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        ss.pressedSprite = Sprite.Create(InitializeUIElement(stateStorage.pressedSprite), new Rect(0, 0, stateStorage.pressedSprite.rect.width, stateStorage.pressedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+        ss.selectedSprite = Sprite.Create(InitializeUIElement(stateStorage.selectedSprite), new Rect(0, 0, stateStorage.selectedSprite.rect.width, stateStorage.selectedSprite.rect.height), new Vector2(0.5f, 0.5f), 10, 0, SpriteMeshType.FullRect, new Vector4(2f, 2f, 2f, 2f) );
+
+        GetComponent<Button>().spriteState = ss;
         UIText.color = UIPalette.accentColor;
     }
 
@@ -37,7 +49,12 @@ public class Button8Bit : Button
         return PaletteSwapper.SwapPalette(pixels, basePalette, UIPalette, (int)spriteToChange.rect.x, (int)spriteToChange.rect.y, (int)spriteToChange.rect.width, (int)spriteToChange.rect.height);
     }
 
-    
+    void ColorChanged()
+    {
+        Initialize();
+    }
+
+
 }
 
 
