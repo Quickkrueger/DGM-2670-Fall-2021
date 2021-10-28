@@ -13,10 +13,18 @@ public class SelectableCharacter : MonoBehaviour
     {
         
         characterData = (CharacterData)data;
+
+        characterData.characterPalette.OnColorChanged += ColorChanged;
         
         characterImage = GetComponent<Image>();
-        characterImage.sprite = Sprite.Create(InitializeCharacterElement(characterData.walk.spriteCoords[0].x,characterData.walk.spriteCoords[0].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10f);
+
+        FillColors();
         
+    }
+
+    private void FillColors()
+    {
+        characterImage.sprite = Sprite.Create(InitializeCharacterElement(characterData.walk.spriteCoords[0].x, characterData.walk.spriteCoords[0].y), new Rect(0, 0, 8, 8), new Vector2(0.5f, 0.5f), 10f);
     }
     
     private Texture2D InitializeCharacterElement(int spriteX, int spriteY)
@@ -31,4 +39,16 @@ public class SelectableCharacter : MonoBehaviour
     {
         transform.parent.GetComponent<CharacterSelect>().NewSelectionMade(characterData);
     }
+
+    void ColorChanged()
+    {
+        FillColors();
+    }
+
+    private void OnDestroy()
+    {
+        characterData.characterPalette.OnColorChanged -= ColorChanged;
+    }
+
+
 }

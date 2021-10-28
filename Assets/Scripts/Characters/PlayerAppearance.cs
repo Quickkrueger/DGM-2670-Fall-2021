@@ -32,6 +32,8 @@ public class PlayerAppearance : MonoBehaviour
 
     public void UpdateSprite()
     {
+        playerData.visualData.characterPalette.OnColorChanged -= ColorChanged;
+        playerData.visualData.characterPalette.OnColorChanged += ColorChanged;
         Stand();
     }
 

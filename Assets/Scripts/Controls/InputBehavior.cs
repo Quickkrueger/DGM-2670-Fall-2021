@@ -92,6 +92,14 @@ public class InputBehavior : MonoBehaviour
     {
         _rigidbody2D.constraints = RigidbodyConstraints2D.None;
     }
-    
-    
+
+    private void OnDestroy()
+    {
+        jump.performed -= Jump;
+        attack.performed -= Attack;
+        right.performed -= Right;
+        left.performed -= Left;
+    }
+
+
 }
