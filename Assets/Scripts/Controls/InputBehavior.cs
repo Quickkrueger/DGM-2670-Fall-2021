@@ -95,10 +95,25 @@ public class InputBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        jump.performed -= Jump;
-        attack.performed -= Attack;
-        right.performed -= Right;
-        left.performed -= Left;
+        if (jump != null)
+        {
+            jump.performed -= Jump;
+        }
+
+        if (attack != null)
+        {
+            attack.performed -= Attack;
+        }
+
+        if (right != null)
+        {
+            right.performed -= Right;
+        }
+
+        if (left != null)
+        {
+            left.performed -= Left;
+        }
     }
 
 

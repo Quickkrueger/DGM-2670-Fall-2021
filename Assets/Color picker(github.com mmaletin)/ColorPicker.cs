@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using static UnityEngine.Mathf;
 
 [ExecuteInEditMode, RequireComponent(typeof(Image))]
-public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class ColorPicker : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private const float recip2Pi = 0.159154943f;
     private const string colorPickerShaderName = "UI/ColorPicker";
@@ -91,7 +91,7 @@ public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         image.material.SetFloat(_AspectRatio, rect.width / rect.height);
     }
 
-    public void OnDrag(PointerEventData eventData)
+    /*public void OnDrag(PointerEventData eventData)
     {
         if (WrongShader()) return;
 
@@ -111,7 +111,7 @@ public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             v = InverseLerp(-size, size, pos.y);
             ApplyColor();
         }
-    }
+    }*/
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -202,4 +202,8 @@ public class ColorPicker : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     }
 #endif
 
+    public void OnDrag(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
 }

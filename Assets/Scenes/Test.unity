@@ -2648,6 +2648,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1777338183}
+        m_TargetAssemblyTypeName: SliderUpdater, Assembly-CSharp
+        m_MethodName: LoadValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &738836104
 Transform:
   m_ObjectHideFlags: 0
@@ -6171,6 +6183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1777338181}
   - component: {fileID: 1777338182}
+  - component: {fileID: 1777338183}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -6263,6 +6276,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1777338183}
+        m_TargetAssemblyTypeName: SliderUpdater, Assembly-CSharp
+        m_MethodName: SaveValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1777338183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777338180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0905296ed9670914ab12c4036b0c1d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1777338182}
 --- !u!1 &1792289571
 GameObject:
   m_ObjectHideFlags: 0

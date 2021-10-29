@@ -7,6 +7,8 @@ public class PaletteData : ScriptableObject
     public Color secondaryColor;
     public Color accentColor;
     public Color backgroundColor;
+    
+    
 
     public void ChangePrimaryColor(Color newColor)
     {
