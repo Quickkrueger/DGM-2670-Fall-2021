@@ -69,6 +69,31 @@ public class PaletteData : ScriptableObject
         OnColorChanged();
     }
 
+    public void SavePalette()
+    {
+        PlayerPrefs.SetString(this.name + "_primary", ColorUtility.ToHtmlStringRGB(primaryColor));
+        PlayerPrefs.SetString(this.name + "_secondary", ColorUtility.ToHtmlStringRGB(secondaryColor));
+        PlayerPrefs.SetString(this.name + "_accent", ColorUtility.ToHtmlStringRGB(accentColor));
+    }
+
+    public void LoadPalette()
+    {
+        if (PlayerPrefs.HasKey(this.name + "_primary"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_primary"), out primaryColor);
+        }
+
+        if (PlayerPrefs.HasKey(this.name + "_secondary"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_secondary"), out secondaryColor);
+        }
+
+        if (PlayerPrefs.HasKey(this.name + "_accent"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_accent"), out accentColor);
+        }
+    }
+
     public delegate void OnColorChangedDelegate();
     public event OnColorChangedDelegate OnColorChanged;
 }

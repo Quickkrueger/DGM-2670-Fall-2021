@@ -33,4 +33,22 @@ public class PalettePopulator : MonoBehaviour
             ui.FillColors();
         }
     }
+
+    public void LoadPalettes()
+    {
+        for (int i = 0; i < allPalettes.palettes.Count; i++)
+        {
+            allPalettes.palettes[i].LoadPalette();
+        }
+    }
+    
+    public void SavePalettes()
+    {
+        for (int i = 0; i < allPalettes.palettes.Count; i++)
+        {
+            allPalettes.palettes[i].SavePalette();
+        }
+    }
+    
+    
 }

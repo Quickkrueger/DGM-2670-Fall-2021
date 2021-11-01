@@ -29,6 +29,7 @@ public class SliderUpdater : MonoBehaviour
     public void SaveValue()
     {
         PlayerPrefs.SetFloat("volume", slider.value);
+        PlayerPrefs.Save();
     }
 
 }

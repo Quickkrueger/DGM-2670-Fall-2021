@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class UI8Bit : MonoBehaviour
 {
     public PaletteData basePalette;
