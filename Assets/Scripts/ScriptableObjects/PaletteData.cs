@@ -74,6 +74,7 @@ public class PaletteData : ScriptableObject
         PlayerPrefs.SetString(this.name + "_primary", ColorUtility.ToHtmlStringRGB(primaryColor));
         PlayerPrefs.SetString(this.name + "_secondary", ColorUtility.ToHtmlStringRGB(secondaryColor));
         PlayerPrefs.SetString(this.name + "_accent", ColorUtility.ToHtmlStringRGB(accentColor));
+        PlayerPrefs.Save();
     }
 
     public void LoadPalette()
