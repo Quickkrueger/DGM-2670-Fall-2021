@@ -7,6 +7,9 @@ public class EnvironmentTile : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Collider2D tileCollider;
+
+    private EnvironmentBuilder environment;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,8 +64,23 @@ public class EnvironmentTile : MonoBehaviour
         CreateTile();
     }
 
+    public void AssignParent(EnvironmentBuilder parent)
+    {
+        environment = parent;
+        environment.OnLevelReset += DestroySelf;
+    }
+
+    public void DestroySelf()
+    {
+        if (gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnDestroy()
     {
+        environment.OnLevelReset -= DestroySelf;
         tileData.tilePalette.OnColorChanged -= ColorChanged;
     }
 }

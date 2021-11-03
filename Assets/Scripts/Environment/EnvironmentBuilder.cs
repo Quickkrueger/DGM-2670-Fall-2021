@@ -183,8 +183,9 @@ public class EnvironmentBuilder : MonoBehaviour
     GameObject CreateTile(int randTile, float positionCount, TileData[] tileSet, Vector3 referencePosition)
     {
         GameObject newTile = Instantiate(tilePrefab, referencePosition + Vector3.down * positionCount, Quaternion.identity);
-        newTile.GetComponent<EnvironmentTile>().UpdateTile(tileSet[randTile]);
-        
+        EnvironmentTile newTileScript = newTile.GetComponent<EnvironmentTile>();
+        newTileScript.UpdateTile(tileSet[randTile]);
+        newTileScript.AssignParent(this);
         return newTile;
     }
 
@@ -228,4 +229,13 @@ public class EnvironmentBuilder : MonoBehaviour
             builderRoutine = StartCoroutine(Builder());
         }
     }
+
+    public void ResetLevel()
+    {
+        OnLevelReset();
+        InitializeLevel(0f);
+    }
+
+    public delegate void OnLevelResetDelegate();
+    public event OnLevelResetDelegate OnLevelReset;
 }
