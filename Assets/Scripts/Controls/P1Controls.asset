@@ -53,7 +53,7 @@ MonoBehaviour:
     action:
       m_Name: Action
       m_Type: 2
-      m_ExpectedControlType: Vector2
+      m_ExpectedControlType: 
       m_Id: b84533bb-c9db-4511-b869-67c5862f8115
       m_Processors: 
       m_Interactions: 
@@ -67,9 +67,9 @@ MonoBehaviour:
         m_Action: Action
         m_Flags: 0
       - m_Name: 
-        m_Id: 1463cabb-d577-46d0-9cfa-6a21b16a09b9
-        m_Path: <Touchscreen>/primaryTouch/position
-        m_Interactions: Hold(pressPoint=0.25)
+        m_Id: d20e71c4-b188-45a4-9af5-a22db607a36b
+        m_Path: <Touchscreen>/press
+        m_Interactions: 
         m_Processors: 
         m_Groups: 
         m_Action: Action
@@ -83,15 +83,7 @@ MonoBehaviour:
       m_Id: 3219997d-2af7-41c3-be62-c6f1b57f725e
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 01d7fef3-6b55-4761-b4d7-1beabe827ec5
-        m_Path: <Mouse>/leftButton
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Action
-        m_Flags: 0
+      m_SingletonActionBindings: []
   maxJumps: 1
   jumpsAvailable: 1
   UseTouch: 1

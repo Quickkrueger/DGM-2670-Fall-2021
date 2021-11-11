@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0552cb325b070134eb29f6e7759e2d28, type: 3}
   m_Name: Palette 3
   m_EditorClassIdentifier: 
-  primaryColor: {r: 0.7118284, g: 0.6039216, b: 0.68235296, a: 1}
-  secondaryColor: {r: 0.45309627, g: 0.24292454, b: 0.5, a: 1}
-  accentColor: {r: 0.25592974, g: 0.1495194, b: 0.3529412, a: 1}
+  primaryColor: {r: 0.8207547, g: 0.38327694, b: 0.77153355, a: 1}
+  secondaryColor: {r: 0.34404308, g: 0.10893556, b: 0.4528302, a: 1}
+  accentColor: {r: 0.14730445, g: 0.047436804, b: 0.24528301, a: 1}
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}

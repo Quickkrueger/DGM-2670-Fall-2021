@@ -7,6 +7,8 @@ public class PaletteData : ScriptableObject
     public Color secondaryColor;
     public Color accentColor;
     public Color backgroundColor;
+    
+    
 
     public void ChangePrimaryColor(Color newColor)
     {
@@ -44,4 +46,55 @@ public class PaletteData : ScriptableObject
             return backgroundColor;
         }
     }
+
+    public void SetColor(int index, Color newColor)
+    {
+        if (index == 0)
+        {
+            primaryColor = newColor;
+        }
+        else if (index == 1)
+        {
+            secondaryColor = newColor;
+        }
+        else if (index == 2)
+        {
+            accentColor = newColor;
+        }
+        else
+        {
+            backgroundColor = newColor;
+        }
+
+        OnColorChanged();
+    }
+
+    public void SavePalette()
+    {
+        PlayerPrefs.SetString(this.name + "_primary", "#" + ColorUtility.ToHtmlStringRGBA(primaryColor));
+        PlayerPrefs.SetString(this.name + "_secondary", "#" + ColorUtility.ToHtmlStringRGBA(secondaryColor));
+        PlayerPrefs.SetString(this.name + "_accent", "#" + ColorUtility.ToHtmlStringRGBA(accentColor));
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPalette()
+    {
+        if (PlayerPrefs.HasKey(this.name + "_primary"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_primary"), out primaryColor);
+        }
+
+        if (PlayerPrefs.HasKey(this.name + "_secondary"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_secondary"), out secondaryColor);
+        }
+
+        if (PlayerPrefs.HasKey(this.name + "_accent"))
+        {
+            ColorUtility.TryParseHtmlString(PlayerPrefs.GetString(this.name + "_accent"), out accentColor);
+        }
+    }
+
+    public delegate void OnColorChangedDelegate();
+    public event OnColorChangedDelegate OnColorChanged;
 }
